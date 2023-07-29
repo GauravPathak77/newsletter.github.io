@@ -45,7 +45,7 @@ const request = https.request(url,options,function(response){
     res.sendFile(__dirname + "/failure.html");
   }
 response.on("data",function(data){
-  console.log(statuscode);
+  console.log(res.statusCode);
 });
 });
 request.write(jsonData);
@@ -59,14 +59,3 @@ app.post("/failure.html", function(req,res){
 app.listen(process.env.PORT || 3000,function(req,res){
   console.log("server is connected to port 3000");
 });
-
-
-// Audience
-// 43450f6900
-
-// API KEY
-// 8086e54c3b306d6b623f14f1d76b7d41-us13
-
-
-//https://usx.api.mailchimp.com/3.0/lists
-//https://us13.api.mailchimp.com/3.0/lists/43450f6900
